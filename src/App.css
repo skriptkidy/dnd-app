@@ -2,33 +2,49 @@ body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--tg-theme-bg-color, #fff);
-  color: var(--tg-theme-text-color, #000);
+  background-color: var(--tg-theme-bg-color, #ffffff);
+  color: var(--tg-theme-text-color, #000000);
 }
 
 .container {
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  padding-bottom: 40px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  color: var(--tg-theme-hint-color, #888);
 }
 
 .card {
   background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
-  padding: 15px;
+  padding: 16px;
   border-radius: 12px;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
+  padding: 12px;
+  margin-top: 8px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--tg-theme-hint-color, #ccc);
   box-sizing: border-box;
   font-size: 16px;
+  background-color: var(--tg-theme-bg-color, #fff);
+  color: var(--tg-theme-text-color, #000);
 }
 
+/* Здоровье */
 .hp-card {
   text-align: center;
 }
@@ -36,26 +52,35 @@ input {
 .hp-display {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .hp-value {
   color: var(--tg-theme-link-color, #2481cc);
 }
 
+.hp-value.critical {
+  color: #ff4d4d;
+}
+
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
 }
 
 button {
-  padding: 15px;
+  padding: 12px;
   border: none;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:active {
+  opacity: 0.7;
 }
 
 .btn-dmg {
@@ -66,4 +91,76 @@ button {
 .btn-heal {
   background-color: #4dff88;
   color: black;
+}
+
+/* Кубик */
+.dice-card {
+  text-align: center;
+}
+
+.btn-d20 {
+  background-color: var(--tg-theme-button-color, #2481cc);
+  color: var(--tg-theme-button-text-color, #fff);
+  width: 100%;
+  font-size: 18px;
+}
+
+.dice-result {
+  margin-top: 12px;
+  font-size: 20px;
+  padding: 12px;
+  background-color: var(--tg-theme-bg-color, #fff);
+  border-radius: 8px;
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Характеристики */
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--tg-theme-hint-color, #ddd);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-name {
+  font-weight: 500;
+}
+
+.stat-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-small {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 18px;
+  background-color: var(--tg-theme-button-color, #2481cc);
+  color: var(--tg-theme-button-text-color, #fff);
+}
+
+.stat-value {
+  min-width: 60px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Кнопка сброса */
+.btn-reset {
+  background-color: transparent;
+  border: 2px solid var(--tg-theme-hint-color, #ccc);
+  color: var(--tg-theme-hint-color, #888);
+  margin-top: 8px;
 }
