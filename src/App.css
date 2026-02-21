@@ -1,37 +1,27 @@
-/* ... все предыдущие стили остаются ... */
-
-/* === ИНВЕНТАРЬ === */
-.inventory-card {
+/* === АТАКИ === */
+.attacks-card {
   padding: 12px;
 }
 
-.inventory-header {
+.section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.inventory-header h3 {
+.section-header h3 {
   margin: 0;
 }
 
-.total-weight {
-  font-size: 14px;
-  color: var(--tg-theme-hint-color, #888);
-  background-color: var(--tg-theme-bg-color, #fff);
-  padding: 4px 8px;
-  border-radius: 6px;
-}
-
-.btn-add-item {
+.btn-add-section {
   width: 100%;
   background-color: var(--tg-theme-button-color, #2481cc);
   color: var(--tg-theme-button-text-color, #fff);
   margin-bottom: 12px;
 }
 
-.add-item-form {
+.add-form {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -47,79 +37,81 @@
   gap: 8px;
 }
 
-.form-row input {
-  margin-top: 0;
+.form-select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--tg-theme-hint-color, #ccc);
+  background-color: var(--tg-theme-bg-color, #fff);
+  color: var(--tg-theme-text-color, #000);
+  font-size: 14px;
 }
 
-.btn-confirm {
-  background-color: #4dff88;
-  color: black;
-  font-weight: bold;
-}
-
-.inventory-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.empty-inventory {
+.empty-section {
   text-align: center;
   color: var(--tg-theme-hint-color, #888);
   padding: 20px;
 }
 
-.inventory-item {
+.attack-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
   background-color: var(--tg-theme-bg-color, #fff);
   border-radius: 8px;
+  margin-bottom: 8px;
 }
 
-.item-info {
+.attack-info {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.item-name {
-  font-weight: 500;
+.attack-name {
+  font-weight: 600;
+  font-size: 15px;
 }
 
-.item-weight {
+.attack-details {
   font-size: 12px;
   color: var(--tg-theme-hint-color, #888);
 }
 
-.item-controls {
+.attack-controls {
   display: flex;
-  align-items: center;
   gap: 6px;
 }
 
-.btn-qty {
-  width: 28px;
-  height: 28px;
+.btn-attack {
+  width: 40px;
+  height: 40px;
   padding: 0;
-  font-size: 16px;
-  background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
-  color: var(--tg-theme-text-color, #000);
+  font-size: 18px;
+  background-color: #ff9f4d;
+  color: white;
+  border-radius: 8px;
 }
 
-.item-qty {
-  min-width: 24px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.btn-delete {
-  width: 32px;
-  height: 32px;
+.btn-damage {
+  width: 40px;
+  height: 40px;
   padding: 0;
-  font-size: 14px;
+  font-size: 18px;
   background-color: #ff4d4d;
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
+}
+
+.dice-details {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+/* Адаптация существующих стилей */
+.inventory-card, .attacks-card {
+  margin-top: 8px;
 }
